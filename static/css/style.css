@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0em;
+}
+
+/* .cover {
+    height: 400px;
+    background-image: url(../images/event.jpg);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-position-y: -10rem;
+    background-color: rgb(0,0,0,0.5);
+    color: white;
+} */

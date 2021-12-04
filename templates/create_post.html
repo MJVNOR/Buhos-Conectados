@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Crear una nueva publicación</h1>
+
+<div id="App" class="row pt-5">
+
+    {# FORM #}
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>¿En qué evento estas pensando?</h4>
+            </div>
+            <form id="product-form" class="card-body justify-content-center"
+             method="POST" action="{{ url_for('posts.create_post') }}">
+                
+                {# NAME OF THE EVENT #}
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Nombre del evento" class="form-control">
+                </div>
+
+                {# EVENT DESCRIPTION FIELD #}
+                <div class="form-group">
+                    <label for="description">Example textarea</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" cols="10"></textarea>
+                </div>
+
+                {# EVENT DATE FIELD  (DAY AND MONTH) #}
+                <div class="form-group">
+                    <input type="text" id="date" name="date" placeholder="Fecha del evento" class="form-control">
+                </div>
+
+                {# EVENT TIME FIELD #}
+                <div class="form-group">
+                    <input type="text" id="time" name="time" placeholder="Especifique hora del evento" class="form-control">
+                </div>
+
+                {# EVENT TIME FIELD #}
+                <div class="form-group">
+                    <input type="text" id="duration" name="duration" placeholder="Especifique la duración del evento" class="form-control">
+                </div>
+
+                {# PLACE OF THE EVENT FIEL #}
+                <div class="form-group">
+                    <input type="text" id="place" name="place" placeholder="Lugar del evento" class="form-control">
+                </div>
+
+                {# EVENT CAPACITY (IF ANY) FIELD #}
+                <div class="form-group">
+                    <input type="text" id="capacity" name="capacity" placeholder="Capacidad de personas" class="form-control">
+                </div>
+
+                {# CONTACT FIELD #}
+                <div class="form-group">
+                    <input type="text" id="contact" name="contact" placeholder="Proporcione algun contacto para dudas..."
+                        class="form-control">
+                </div>
+                
+                {# CHECKBOX TO MARK A POST AS PRIVATE #}
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="privateCheck" name="privateCheck" >
+                    <label class="form-check-label" for="privateCheck">Crear como privada</label>
+                </div>
+
+                {# SUBMIT BUTTON #}
+                <input type="submit" value="Publicar" class="btn btn-primary btn-block">
+            </form>
+        </div>
+    </div>
+
+    {#<div id="product-list" class="col-md-8"></div>#}
+</div>
+
+<style>
+    .description {
+      resize: none;
+      height: 100px;
+      width: 350px;
+    }
+</style>
+
+{% endblock %}
