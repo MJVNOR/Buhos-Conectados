@@ -35,10 +35,10 @@
         <p class="card-text"><b>Hora: </b>{{ post.time }}</p>
         <p class="card-text"><b>Description: </b>{{ post.description }}</p>
 
-        {% if user.user_id == post.user_id %}
+        {% if user.id == post.user_id %}
           <a href="/edit_post/{{post.id}}" class="btn btn-outline-primary">Editar publicación</a>
         {% endif %}
-        {% if user.user_id == post.user_id or user.admin == 1 %}
+        {% if user.id == post.user_id or user.admin == 1 %}
         <a href="/delete_post/{{post.id}}" onclick="return confirm('¿Estás seguro?');" class="btn btn-outline-danger">Eliminar publicación</a>
         {% endif %}
       </div>
