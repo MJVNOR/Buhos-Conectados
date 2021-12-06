@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS height: 200px; -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="icon" href="../static/images/Lowls.png", type="image/icon type">
+    <title>Buhos Conectados</title>
+</head>
+
+<body>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark"> <!--bg-dark es para cambiar el color de la barra de arriba a negro -->
+            <a class="navbar-brand" href="{{ url_for('main.index') }}">
+                Buhos Conectados
+                <img src="../static/images/LowlsG.png" width="60" height="60" alt="">
+            </a>  
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+            --> 
+            
+                <!-- <ul class="navbar-nav mr-auto">/Con este codigo se crea en vertical el texto/ --> 
+                <ul class="nav"> 
+                    <!-- IR AL INICIO -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('main.index') }}">Inicio</a>
+                    </li>
+
+                    <!-- IR AL PERFIL -->
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main.profile') }}">Perfil</a>
+                    </li>
+                    {% endif %}
+
+                    <!-- IR A INICIAR SESION -->
+                    {% if not current_user.is_authenticated %}
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="{{ url_for('auth.login') }}" class="navbar-item">
+                            Iniciar Sesión
+                        </a>
+                    </li>
+
+                    <!-- IR A REGISTRARSE -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('auth.signup') }}" class="navbar-item">
+                            Registrarse
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    <!-- IR A CONOCENOS -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Conocenos</a>
+                    </li>
+
+                    <!-- IR A CERRAR SESION -->
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('auth.logout') }}" class="navbar-item">
+                            Cerrar Sesión
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            <!--</div> -->
+        </nav>
+
+    </header>
+
+    
+        {% block content %}
+        {% endblock %}
+
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container w-75 bg2-primary mt-5 rounded shadow">
+    <div class= "row align-items-stretch">
+        <div class="col bg2 d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
+
+        </div>
+        <div class="col bg-white p-5 rounded-end">
+            <h2 class="fw-bold text-center py-1">Registrarse</h2>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="notification is-danger">
+                    {{ messages[0] }} <br> Dirigite a <a href="{{ url_for('auth.login') }}"> iniciar sesion</a>.
+                </div>
+            {% endif %}
+            {% endwith %}
+            
+            <form action="/signup" method="POST">
+                <div class="mb-4">
+                    <label for="email" class="form-label">Correo Institucional</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+                <div class="mb-4">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="name" class="form-control" name="name">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-outline-primary btn-lg btn-block"> Registrarme</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="bootstrap.bundle.min.js"></script>
+
+{% endblock %}

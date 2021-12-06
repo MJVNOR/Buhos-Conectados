@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="cover d-flex justify-content-center align-items-center flex-column">
+  <h1>
+      Buhos Conectados
+  </h1>
+  <p>
+      Publica, Descubre y Participa en eventos increibles
+  </p>
+  <a class="btn btn-primary" href="{{url_for('posts.create_post')}}" role="button">Publicar</a>
+</div>
+
+<br>
+<br>
+<h3 class="text-center">Eventos recientes</h3>
+
+{% for post in posts %}
+<div class = "container mt-5">
+  <div class="card">
+      <h5 class="card-header text-center">{{ post.title }}</h5>
+      <div class="card-body">
+        <p class="card-text"><b>Lugar: </b>{{ post.place }}</p>
+        <p class="card-text"><b>Fecha: </b>{{ post.date }}</p>
+        <p class="card-text"><b>Hora: </b>{{ post.time }}</p>
+        <p class="card-text"><b>Description: </b>{{ post.description }}</p>
+
+        {% if user_id == post.user_id %}
+        
+          <a href="#" class="btn btn-outline-primary">Editar publicación</a>
+          <a href="/delete_post/{{post.id}}" class="btn btn-outline-danger">Eliminar publicación</a>
+        {% endif %}
+      </div>
+    </div>
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock %}
