@@ -72,3 +72,41 @@ def delete_post_post(id):
     db.session.commit()
 
     return redirect(url_for("main.index"))
+
+
+@posts.route("/edit_post/<id>")
+@login_required
+def edit_post(id):
+    post = Post.query.filter_by(id=id).first()
+    print("Public:", post.public)
+    return render_template("edit_post.html", post = post)
+
+@posts.route("/update_post/<id>", methods=["POST"])
+@login_required
+def update_post(id):
+    # get data from the form fields
+    title = request.form.get("name")
+    place = request.form.get("place")
+    date = request.form.get("date")
+    time = request.form.get("time")
+    duration = request.form.get("duration")
+    description = request.form.get("description")
+    contact = request.form.get("contact")
+    capacity = request.form.get("capacity")
+    public = False if request.form.get("privateCheck") else True
+
+    post = Post.query.filter_by(id=id).first()
+    post.title = title
+    post.place = place
+    post.date = date
+    post.time = time
+    post.duration = duration
+    post.description = description
+    post.contact = contact
+    post.capacity = capacity
+    post.public = public
+
+    db.session.commit()
+
+    flash('La publicación se ha actualizado con exito.')
+    return redirect(url_for("main.index"))

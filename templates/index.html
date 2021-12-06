@@ -12,11 +12,21 @@
 </div>
 
 <br>
-<br>
+
+<div class="container mt-5">
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="alert alert-success text-center" role="alert">
+        {{ messages[0] }}
+    </div>
+{% endif %}
+{% endwith %}
+</div>
+
 <h3 class="text-center">Eventos recientes</h3>
 
-{% for post in posts %}
 <div class = "container mt-5">
+  {% for post in posts %}
   <div class="card">
       <h5 class="card-header text-center">{{ post.title }}</h5>
       <div class="card-body">
@@ -27,13 +37,14 @@
 
         {% if user_id == post.user_id %}
         
-          <a href="#" class="btn btn-outline-primary">Editar publicación</a>
-          <a href="/delete_post/{{post.id}}" class="btn btn-outline-danger">Eliminar publicación</a>
+          <a href="/edit_post/{{post.id}}" class="btn btn-outline-primary">Editar publicación</a>
+          <a href="/delete_post/{{post.id}}" onclick="return confirm('¿Estás seguro?');" class="btn btn-outline-danger">Eliminar publicación</a>
         {% endif %}
       </div>
     </div>
+    <br>
+    {% endfor %}
 </div>
-{% endfor %}
 
 </div>
 

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="App" class="row pt-5 justify-content-center">
+
+    {# FORM #}
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>Editar la publicación "{{ post.title }}"</h4>
+            </div>
+            <form id="product-form" class="card-body justify-content-center"
+             method="POST" action="{{ url_for('posts.update_post', id=post.id) }}">
+                
+                {# NAME OF THE EVENT #}
+                <div class="form-group">
+                    <input required value="{{post.title}}" type="text" id="name" name="name" placeholder="Nombre del evento*" class="form-control">
+                </div>
+
+                {# EVENT DESCRIPTION FIELD #}
+                <div class="form-group">
+                    <textarea required class="form-control" id="description" name="description" rows="3" cols="10"
+                    placeholder="Agregue una descripción del evento*">{{post.description}}</textarea>
+                </div>
+
+                {# EVENT DATE FIELD  (DAY AND MONTH) #}
+                <div class="form-group">
+                    <input required value="{{post.date}}" type="text" id="date" name="date" placeholder="Fecha del evento*" class="form-control">
+                </div>
+
+                {# EVENT TIME FIELD #}
+                <div class="form-group">
+                    <input type="text" value="{{post.time}}" id="time" name="time" placeholder="Especifique hora del evento" class="form-control">
+                </div>
+
+                {# EVENT DURATION FIELD #}
+                <div class="form-group">
+                    <input type="text" value="{{post.duration}}" id="duration" name="duration" placeholder="Especifique la duración del evento" class="form-control">
+                </div>
+
+                {# PLACE OF THE EVENT FIEL #}
+                <div class="form-group">
+                    <input required type="text" value="{{post.place}}" id="place" name="place" placeholder="Lugar del evento*" class="form-control">
+                </div>
+
+                {# EVENT CAPACITY (IF ANY) FIELD #}
+                <div class="form-group">
+                    <input type="text" value="{{post.capacity}}" id="capacity" name="capacity" placeholder="Capacidad de personas" class="form-control">
+                </div>
+
+                {# CONTACT FIELD #}
+                <div class="form-group">
+                    <input type="text" value="{{post.contact}}" id="contact" name="contact" placeholder="Proporcione algun contacto para dudas..."
+                        class="form-control">
+                </div>
+                
+                {# CHECKBOX TO MARK A POST AS PRIVATE #}
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="privateCheck" name="privateCheck" 
+                    {% if post.public %}
+                    
+                    {% else %}
+                        checked
+                    {% endif %}
+                    >
+                    <label class="form-check-label" for="privateCheck">Crear como privada</label>
+                </div>
+
+                {# SUBMIT BUTTON #}
+                <input type="submit" value="Editar publicacion" class="btn btn-primary btn-block">
+            </form>
+        </div>
+    </div>
+
+    {#<div id="product-list" class="col-md-8"></div>#}
+</div>
+
+{% endblock %}

@@ -13,7 +13,7 @@ def index():
     if current_user.is_anonymous:
         posts = Post.query.filter_by(public=1).all() # We only get public events
     else:
-        posts = Post.query.all()
+        posts = Post.query.order_by(Post.date_created.desc()).all()
         user_id = int(current_user.get_id())
 
     print('El id del usuario es:', type(current_user.get_id()))

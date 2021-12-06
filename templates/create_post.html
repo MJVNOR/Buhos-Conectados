@@ -2,9 +2,7 @@
 
 {% block content %}
 
-<h1>Crear una nueva publicación</h1>
-
-<div id="App" class="row pt-5">
+<div id="App" class="row pt-5 justify-content-center">
 
     {# FORM #}
     <div class="col-md-4">
@@ -17,18 +15,18 @@
                 
                 {# NAME OF THE EVENT #}
                 <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Nombre del evento" class="form-control">
+                    <input required type="text" id="name" name="name" placeholder="Nombre del evento*" class="form-control">
                 </div>
 
                 {# EVENT DESCRIPTION FIELD #}
                 <div class="form-group">
-                    <label for="description">Example textarea</label>
-                    <textarea class="form-control" id="description" name="description" rows="3" cols="10"></textarea>
+                    <textarea required class="form-control" id="description" name="description" rows="3" cols="10"
+                    placeholder="Agregue una descripción del evento*"></textarea>
                 </div>
 
                 {# EVENT DATE FIELD  (DAY AND MONTH) #}
                 <div class="form-group">
-                    <input type="text" id="date" name="date" placeholder="Fecha del evento" class="form-control">
+                    <input required type="text" id="date" name="date" placeholder="Fecha del evento*" class="form-control">
                 </div>
 
                 {# EVENT TIME FIELD #}
@@ -43,7 +41,7 @@
 
                 {# PLACE OF THE EVENT FIEL #}
                 <div class="form-group">
-                    <input type="text" id="place" name="place" placeholder="Lugar del evento" class="form-control">
+                    <input required type="text" id="place" name="place" placeholder="Lugar del evento*" class="form-control">
                 </div>
 
                 {# EVENT CAPACITY (IF ANY) FIELD #}
