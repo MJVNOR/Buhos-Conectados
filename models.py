@@ -25,7 +25,8 @@ class Post(db.Model):
     date = db.Column(db.String(100))  # Date the event will take place
     time = db.Column(db.String(100))  # Time the event will take place
     duration = db.Column(db.String(50))  # Duration of the event
-    due_date = db.Column(db.DateTime)
+    due_date = db.Column(db.DateTime)    # Due date
+    expired = db.Column(db.Boolean, default=False) # If event is expired
     description = db.Column(db.String(500))  # Description of the event
     capacity = db.Column(db.String(100))
     contact = db.Column(db.String(100))  # Contact with the post creator

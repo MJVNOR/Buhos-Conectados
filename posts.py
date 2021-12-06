@@ -1,4 +1,5 @@
 from datetime import date
+import datetime
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import login_required, current_user
 from .models import User, Post
@@ -26,6 +27,7 @@ def create_post_post():
     date = request.form.get("date")
     time = request.form.get("time")
     duration = request.form.get("duration")
+    due_date = datetime.datetime.strptime(request.form.get("due_date"), "%Y-%m-%d")
     description = request.form.get("description")
     contact = request.form.get("contact")
     capacity = request.form.get("capacity")
@@ -37,6 +39,7 @@ def create_post_post():
     print("Date:", date)
     print("Time:", time)
     print("Duration:", duration)
+    print("Due date:", due_date)
     print("Description:", description)
     print("Contact:", contact)
     print("Public:", public)
@@ -48,6 +51,7 @@ def create_post_post():
         place=place,
         date=date,
         duration=duration,
+        due_date=due_date,
         time=time,
         description=description,
         capacity=capacity,

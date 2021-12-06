@@ -5,7 +5,6 @@ from . import db
 
 main = Blueprint("main", __name__)
 
-
 @main.route("/")
 def index():
 
@@ -15,10 +14,8 @@ def index():
         posts = Post.query.filter_by(public=1).all()  # We only get public events
     else:
         posts = Post.query.order_by(Post.date_created.desc()).all()
-        user = User.query.filter_by(id=int(current_user.get_id()))
-
-    print("El id del usuario es:", type(current_user.get_id()))
-    print("El id del primer post es:", type(posts[0].user_id))
+        user = User.query.filter_by(id=int(current_user.get_id())).first()
+        print(user)
 
     return render_template("index.html", posts=posts, user=user)
 

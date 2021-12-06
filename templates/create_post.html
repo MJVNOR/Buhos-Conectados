@@ -55,6 +55,12 @@
                         class="form-control">
                 </div>
                 
+                {# EVENT DUE DATE #}
+                <div class="form-group">
+                    <label for="due_date">Indique la fecha en la que debe eliminarse la publicación:</label>
+                    <input required type="date" id="due_date" name="due_date" class="form-control">
+                </div>
+
                 {# CHECKBOX TO MARK A POST AS PRIVATE #}
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="privateCheck" name="privateCheck" >
@@ -69,6 +75,24 @@
 
     {#<div id="product-list" class="col-md-8"></div>#}
 </div>
+
+<script>
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("due_date").setAttribute("min", today);
+</script>
 
 <style>
     .description {
