@@ -30,21 +30,21 @@
     - Urameshi
 
 ### General
-- Mejorare stilo de los formularios (bootstrap)
+- Mejorar stilo de los formularios (bootstrap)
 - Poner el footer (redes de la unison?)
 
 ### Crud
-- perfil
+- Perfil
     1. Crear usuario
     2. Eliminar
-    3. Cambiar nombre
+    3. Cambiar contraseña
     4. Logearte
 - Publicaciones:
     1. Crearlas
     2. eliminarlas
     3. editarlas
-    4. Consultarlas, consultar la mias
-- comentarios
+    4. Consultarlas
+- Comentarios
     1. Editarlo
     2. Eliminarlo
     3. publicarlo
