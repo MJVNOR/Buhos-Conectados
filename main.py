@@ -5,6 +5,7 @@ from . import db
 
 main = Blueprint("main", __name__)
 
+
 @main.route("/")
 def index():
 
@@ -18,6 +19,11 @@ def index():
         print(user)
 
     return render_template("index.html", posts=posts, user=user)
+
+
+@main.route("/conocenos")
+def conocenos():
+    return render_template("conocenos.html")
 
 
 @main.route("/profile")

@@ -1,8 +1,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0em;
-    background: #ffe259;
-    background: linear-gradient(to right, #ffa751, #ffe259)
+    background: #F9F3F3;
+    background: linear-gradient(to right, #e2e2dd, #E8E7E0)
 }
 
 .cover {
@@ -12,7 +12,7 @@ body {
     background-position: center;
     background-blend-mode: darken;
     background-position-y: -10rem;
-    background-color: rgb(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
 }
 
@@ -24,5 +24,25 @@ body {
 
 .bg2{
     background-image: url(../images/biblioteca.jpg);
+    background-position: center center;
+}
+
+.pab{
+    background-image: url(../images/pab.jpg);
+    background-position: center center;
+}
+
+.gui{
+    background-image: url(../images/Guillermo.jpg);
+    background-position: center center;
+}
+
+.dia{
+    background-image: url(../images/Diana.jpg);
+    background-position: center center;
+}
+
+.mar{
+    background-image: url(../images/Martin.jpg);
     background-position: center center;
 }
