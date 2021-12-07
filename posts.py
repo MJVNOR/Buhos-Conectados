@@ -11,7 +11,6 @@ posts = Blueprint("posts", __name__)
 @posts.route("/create_post")
 @login_required
 def create_post():
-    print("Holi")
     return render_template("create_post.html")
 
 
@@ -83,7 +82,8 @@ def delete_post_post(id):
 def edit_post(id):
     post = Post.query.filter_by(id=id).first()
     print("Public:", post.public)
-    return render_template("edit_post.html", post = post)
+    return render_template("edit_post.html", post=post)
+
 
 @posts.route("/update_post/<id>", methods=["POST"])
 @login_required
@@ -112,5 +112,5 @@ def update_post(id):
 
     db.session.commit()
 
-    flash('La publicación se ha actualizado con exito.')
+    flash("La publicación se ha actualizado con exito.")
     return redirect(url_for("main.index"))

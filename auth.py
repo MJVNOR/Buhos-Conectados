@@ -98,3 +98,12 @@ def update_password(id):
 
     flash("Su conraseña se ha actualizado con éxito.")
     return redirect(url_for("main.index"))
+
+
+@auth.route("/delete_user/<id>")
+@login_required
+def delete_user(id):
+    User.query.filter_by(id=id).delete()
+    db.session.commit()
+
+    return redirect(url_for("main.index"))

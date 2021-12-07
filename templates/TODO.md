@@ -44,8 +44,9 @@
     2. eliminarlas
     3. editarlas
     4. Consultarlas
-- Comentarios
-    1. Editarlo
-    2. Eliminarlo
-    3. publicarlo
-    4. consultarlas
+- Eventos de interes
+    1. Editarlo (agregar mas o quitar de los que ya estan)
+    2. Eliminarlo (quitar eventos de la lista)
+    3. Agregar eventos de interes
+    4. consultarlas (verlas)
+- 

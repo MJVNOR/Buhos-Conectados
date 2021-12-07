@@ -1,48 +1,47 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0em;
-    background: #F9F3F3;
-    background: linear-gradient(to right, #e2e2dd, #E8E7E0)
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0em;
+  background: #f9f3f3;
+  background: linear-gradient(to right, #e2e2dd, #e8e7e0);
 }
 
 .cover {
-    height: 400px;
-    background-image: url(../images/event.jpg);
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: darken;
-    background-position-y: -10rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+  height: 400px;
+  background-image: url(../images/event.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  background-position-y: -10rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
-.bg{
-    background-image: url(../images/uni.png);
-    background-position: center center;
+.bg {
+  background-image: url(../images/uni.png);
+  background-position: center center;
 }
 
-
-.bg2{
-    background-image: url(../images/biblioteca.jpg);
-    background-position: center center;
+.bg2 {
+  background-image: url(../images/biblioteca.jpg);
+  background-position: center center;
 }
 
-.pab{
-    background-image: url(../images/pab.jpg);
-    background-position: center center;
+.pab {
+  background-image: url(../images/pab.jpg);
+  background-position: center center;
 }
 
-.gui{
-    background-image: url(../images/Guillermo.jpg);
-    background-position: center center;
+.gui {
+  background-image: url(../images/Guillermo.jpg);
+  background-position: center center;
 }
 
-.dia{
-    background-image: url(../images/Diana.jpg);
-    background-position: center center;
+.dia {
+  background-image: url(../images/Diana.jpg);
+  background-position: center center;
 }
 
-.mar{
-    background-image: url(../images/Martin.jpg);
-    background-position: center center;
+.mar {
+  background-image: url(../images/Martin.jpg);
+  background-position: center center;
 }
